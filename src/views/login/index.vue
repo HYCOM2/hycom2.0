@@ -2,8 +2,8 @@
  * @Author: Xu.WANG raymondmgwx@gmail.com
  * @Date: 2020-08-26 19:35:46
  * @LastEditors: Xu.WANG raymondmgwx@gmail.com
- * @LastEditTime: 2022-07-09 11:25:52
- * @FilePath: \hycom_app\src\views\login\index.vue
+ * @LastEditTime: 2022-07-17 01:02:04
+ * @FilePath: \hycom2.0\src\views\login\index.vue
  * @Description:
  * Copyright (c) 2022 by Xu.WANG raymondmgwx@gmail.com, All Rights Reserved.
 -->
@@ -18,7 +18,7 @@
       label-position="left"
     >
       <h3 class="title">
-        水工建筑物水力学计算程序
+        水工建筑物水力学计算程序HYCOM2.0
       </h3>
       <el-form-item prop="username">
         <span class="svg-container">
