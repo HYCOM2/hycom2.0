@@ -12,5 +12,9 @@ yarn run lint --fix
 ### 构建生产环境 (自带压缩)
 yarn build
 
-### TEST
+### 发布win版到github
+yarn run electron:publish
+
+### 项目地址
+https://github.com/HYCOM2/hycom2.0
 
