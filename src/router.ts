@@ -2,8 +2,8 @@
  * @Author: Xu.WANG raymondmgwx@gmail.com
  * @Date: 2020-08-26 19:35:46
  * @LastEditors: Xu.WANG raymondmgwx@gmail.com
- * @LastEditTime: 2022-07-16 22:10:38
- * @FilePath: \hycom_app\src\router.ts
+ * @LastEditTime: 2022-07-24 00:38:52
+ * @FilePath: \hycom2.0\src\router.ts
  * @Description:
  * Copyright (c) 2022 by Xu.WANG raymondmgwx@gmail.com, All Rights Reserved.
  */
@@ -222,55 +222,49 @@ export default new Router({
       ]
     },
     {
-      path: '/chapter2',
+      path: '/section4',
       component: Layout,
-      redirect: '/chapter2/2.1',
+      redirect: '/section4/4.3',
       name: '水工隧洞水力学计算',
       meta: { title: '水工隧洞水力学计算', icon: 'nested' },
       children: [
         {
-          path: '2.1',
-          component: () => import(/* webpackChunkName: "2.1" */ '@/views/chapter2/2.1/index.vue'),
-          name: '水工有压隧洞水力学计算',
-          meta: { title: '水工有压隧洞水力学计算' },
-          children: [
-            {
-              path: '2.1.1',
-              component: () => import(/* webpackChunkName: "2.1.1" */ '@/views/chapter2/2.1/2.1.1/index.vue'),
-              name: '水工有压隧洞泄量计算',
-              meta: { title: '水工有压隧洞泄量计算' }
-            },
-            {
-              path: '2.1.2',
-              component: () => import(/* webpackChunkName: "2.1.2" */ '@/views/chapter2/2.1/2.1.2/index.vue'),
-              name: '有压短管后接无压隧洞泄量计算',
-              meta: { title: '有压短管后接无压隧洞泄量计算' }
-            }
-          ]
-        },
-        {
-          path: '2.2',
-          component: () => import(/* webpackChunkName: "2.2" */ '@/views/chapter2/2.2/index.vue'),
-          name: '无压隧洞的水面线计算',
-          meta: { title: '无压隧洞的水面线计算' }
-        },
-        {
-          path: '2.3',
-          component: () => import(/* webpackChunkName: "2.3" */ '@/views/chapter2/2.3/index.vue'),
-          name: '2.3水流空化数计算',
-          meta: { title: '水流空化数计算' }
-        },
-        {
           path: '4.3',
-          component: () => import(/* webpackChunkName: "4.3" */ '@/views/chapter2/4.3/index.vue'),
+          component: () => import(/* webpackChunkName: "4.3" */ '@/views/section4/4.3/index.vue'),
           name: '有压短管后接无压隧洞水力学计算',
           meta: { title: '有压短管后接无压隧洞水力学计算' },
           children: [
             {
+              path: '4.3.1.1',
+              component: () => import(/* webpackChunkName: "4.3.1.1" */ '@/views/section4/4.3/4.3.1.1/index.vue'),
+              name: '有压短管泄流能力计算',
+              meta: { title: '有压短管泄流能力计算' }
+            },
+            {
               path: '4.3.2.1',
-              component: () => import(/* webpackChunkName: "4.3.2.1" */ '@/views/chapter2/4.3/4.3.2.1/index.vue'),
+              component: () => import(/* webpackChunkName: "4.3.2.1" */ '@/views/section4/4.3/4.3.2.1/index.vue'),
               name: '典型有压短管泄流能力计算',
               meta: { title: '典型有压短管泄流能力计算' }
+            },
+            {
+              path: '4.3.3.1',
+              component: () => import(/* webpackChunkName: "4.3.3.1" */ '@/views/section4/4.3/4.3.3.1/index.vue'),
+              name: '明流洞内水面线',
+              meta: { title: '明流洞内水面线' }
+            }
+          ]
+        },
+        {
+          path: '4.4',
+          component: () => import(/* webpackChunkName: "4.4" */ '@/views/section4/4.4/index.vue'),
+          name: '高流速水工隧洞防空蚀设计',
+          meta: { title: '高流速水工隧洞防空蚀设计' },
+          children: [
+            {
+              path: '4.4.2',
+              component: () => import(/* webpackChunkName: "4.4.2" */ '@/views/section4/4.4/4.4.2/index.vue'),
+              name: '高流速水工隧洞沿程水流空化数',
+              meta: { title: '高流速水工隧洞沿程水流空化数' }
             }
           ]
         }

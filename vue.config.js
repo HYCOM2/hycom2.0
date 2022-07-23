@@ -12,17 +12,17 @@ module.exports = {
         config.plugins.delete('pwa')
       },
       builderOptions: {
-        appId: "com.github.hycom2",
+        appId: 'com.github.hycom2',
         directories: {
           output: './dist_electron'
         },
-        afterSign: "./build/notarize.js",
+        afterSign: './build/notarize.js',
         win: {
           icon: './public/favicon.ico',
-          target: "nsis"
+          target: 'nsis'
         },
         nsis: {
-          "oneClick": false
+          'oneClick': false
         }
       }
     }

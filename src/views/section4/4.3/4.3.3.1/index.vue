@@ -24,7 +24,7 @@ import HycomForm from '@/components/HycomForm/index.vue'
   }
 })
 export default class Chapter3Section2 extends Vue {
-  private title = '3.2无压隧洞的水面线计算';
+  private title = '4.3.3.1 明流洞内水面线';
   private initData = {
     Q_c: 2310,
     b_c: 10,

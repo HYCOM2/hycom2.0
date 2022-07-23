@@ -24,7 +24,7 @@ import HycomForm from '@/components/HycomForm/index.vue'
   }
 })
 export default class Chapter3Section1Sub2 extends Vue {
-  private title = '3.1.2有压短管的无压隧洞泄量计算';
+  private title = '4.3.1.1 有压短管泄流能力计算';
   private initData = {
     '\\mu': 0.84,
     B: 8,

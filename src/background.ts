@@ -2,7 +2,7 @@
  * @Author: Xu.WANG raymondmgwx@gmail.com
  * @Date: 2022-05-21 21:44:11
  * @LastEditors: Xu.WANG raymondmgwx@gmail.com
- * @LastEditTime: 2022-07-17 00:38:58
+ * @LastEditTime: 2022-07-24 00:42:12
  * @FilePath: \hycom2.0\src\background.ts
  * @Description:
  * Copyright (c) 2022 by Xu.WANG raymondmgwx@gmail.com, All Rights Reserved.
@@ -13,11 +13,11 @@ import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 
-const log = require('electron-log');
-const { autoUpdater } = require("electron-updater");
-autoUpdater.logger = log;
-autoUpdater.logger.transports.file.level = 'info';
-log.info('App starting...');
+const log = require('electron-log')
+const { autoUpdater } = require('electron-updater')
+autoUpdater.logger = log
+autoUpdater.logger.transports.file.level = 'info'
+log.info('App starting...')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -29,8 +29,6 @@ protocol.registerSchemesAsPrivileged([{
     secure: true
   }
 }])
-
-
 
 async function createWindow() {
   // Create the browser window.
@@ -48,31 +46,31 @@ async function createWindow() {
   })
 
   function sendStatusToWindow(text) {
-    log.info(text);
-    win.webContents.send('message', text);
+    log.info(text)
+    win.webContents.send('message', text)
   }
 
   autoUpdater.on('checking-for-update', () => {
-    sendStatusToWindow('Checking for update...');
+    sendStatusToWindow('Checking for update...')
   })
   autoUpdater.on('update-available', (info) => {
-    sendStatusToWindow('Update available.');
+    sendStatusToWindow('Update available.')
   })
   autoUpdater.on('update-not-available', (info) => {
-    sendStatusToWindow('Update not available.');
+    sendStatusToWindow('Update not available.')
   })
   autoUpdater.on('error', (err) => {
-    sendStatusToWindow('Error in auto-updater. ' + err);
+    sendStatusToWindow('Error in auto-updater. ' + err)
   })
   autoUpdater.on('download-progress', (progressObj) => {
-    let log_message = "Download speed: " + progressObj.bytesPerSecond;
-    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-    log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-    sendStatusToWindow(log_message);
+    let logMessage = 'Download speed: ' + progressObj.bytesPerSecond
+    logMessage = logMessage + ' - Downloaded ' + progressObj.percent + '%'
+    logMessage = logMessage + ' (' + progressObj.transferred + '/' + progressObj.total + ')'
+    sendStatusToWindow(logMessage)
   })
   autoUpdater.on('update-downloaded', (info) => {
-    sendStatusToWindow('Update downloaded');
-  });
+    sendStatusToWindow('Update downloaded')
+  })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -103,7 +101,7 @@ app.on('activate', () => {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', async () => {
+app.on('ready', async() => {
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
     try {
@@ -112,7 +110,7 @@ app.on('ready', async () => {
       console.error('Vue Devtools failed to install:', e.toString())
     }
   }
-  autoUpdater.checkForUpdatesAndNotify();
+  autoUpdater.checkForUpdatesAndNotify()
   createWindow()
 })
 

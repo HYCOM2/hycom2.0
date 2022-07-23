@@ -24,7 +24,7 @@ import HycomForm from '@/components/HycomForm/index.vue'
   }
 })
 export default class Chapter3Section3 extends Vue {
-  private title = '3.3水流空化数计算';
+  private title = '4.4.2 高流速水工隧洞沿程水流空化数';
   private initData = {
     '\\nabla': 198.8,
     h_0: 16.14,
